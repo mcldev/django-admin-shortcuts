@@ -1,3 +1,5 @@
+{#  Copy the below from djangocms_admin_style  #}
+{# ------------------------------------------  #}
 {% extends "admin/base.html" %}
 {% load i18n staticfiles admin_style_tags %}
 
@@ -17,4 +19,16 @@
 {% block branding %}{% include 'admin/inc/branding.html' %}{% endblock %}
 
 {% block userlinks %}{% include 'admin/inc/userlinks.html' %}{{ block.super }}{% endblock %}
+{# ------------------------------------------  #}
 
+{# This is unique to admin_shortcuts #}
+{# ------------------------------------------  #}
+{% block breadcrumbs %}
+    {% block admin_shortcuts %}
+		<div class="admin_shortcuts">
+			{% admin_shortcuts %}
+		</div>
+	{% endblock %}
+    {{ block.super }}
+{% endblock %}
+{# ------------------------------------------  #}
